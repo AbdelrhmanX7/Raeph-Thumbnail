@@ -9,6 +9,9 @@ main {
     display: flex;
     justify-content: space-around; align-items: center;
     flex-direction: column;
+    background-image: url(Raeph-img/SvWWN.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .banner {
     position: relative;
@@ -64,12 +67,13 @@ main {
 }
 .season-number {
     display: flex;
-    justify-content: space-around; align-items: center;
+    justify-content: center; align-items: center;
     position: relative;
     bottom: 5px;
 }
 .season-number h3 {
     font-weight: 600;
+    margin-left: 5px;
 }
 .banner-bottom {
     position: absolute;
@@ -155,6 +159,7 @@ main {
     background-color: #7E57C2;
     padding: 20px;
     border-radius: 5px;
+    box-shadow: 0px 0px 19px 7px #6fff61d1;
 }
 .control input {
     outline: none;
@@ -170,7 +175,7 @@ main {
     transition: 0.5s;
 }
 .control input:focus {
-    box-shadow: 1px 10px 11px 0px #00000062;
+    box-shadow: 0px 8px 11px 0px #6193ffd1;
 }
 .control button {
     outline: none;
@@ -186,5 +191,66 @@ main {
 }
 .control button:hover {
     cursor: pointer;
-    box-shadow: 1px 10px 11px 0px #00000062;
+    box-shadow: 0px 8px 11px 0px #6193ffd1;
+}
+
+
+
+@media screen and (max-width: 750px) {
+    .banner {
+        width: 360px;
+        height: 202px;
+        border-width: 2px;
+    }
+    .banner::before {
+        width: 15px; height: 15px;
+    }
+    .banner-cover img {
+        width: 200px;
+        height: 200px;
+    }
+    .logo img {
+        width: 25px; height: 25px;
+    }
+    .season-text {
+        right: 12px;
+    }
+    .season-text h1 {
+        font-size: 27px;
+    }
+    .season-text h4, h3 {
+        font-size: 9px;
+    }
+    .channel-name h3 {
+        font-size: 15px;
+    }
+    .channel-name h1 {
+        font-size: 30px;
+    }
+    .Track-name h1 {
+        font-size: 15px;
+    }
+    .Producer-name h1 {
+        font-size: 9px;
+    }
+    .epsiode-number {
+        bottom: 6px;
+    }
+    .epsiode-number h4 {
+        font-size: 14px;
+        margin-top: -9px;
+        right: -5px;
+    }
+    .epsiode-number h1 {
+        font-size: 53px;
+    }
+    .footer p {
+        font-size: 6px;
+    }
+    .control {
+        width: 360px;
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
 }
