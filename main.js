@@ -30,28 +30,26 @@ function updateValue_Season_Number() {
 }
 $(document).ready(function () {
   $("#btn_convert").on("click", function () {
-    document.querySelector("#Raepgh-photo").src = "Raeph-img/channel-img-black.jpg";
-    for (i = 0; i < 2; i++) {
-      if (i === 0) {
-
-          document.querySelector('#myhtml').removeAttribute('class')
-          document.querySelector('#myhtml').setAttribute('class', 'banner_black')
-          document.querySelector('.season-text h1').innerHTML = 'Watch'
-          html2canvas(document.getElementById("myhtml")).then(function (canvas) {
-            var anchorTag = document.createElement("a");
-            document.body.appendChild(anchorTag);
-            anchorTag.download = `(Watch)${Episode_Name.value}${Rapper_Name.value}`;
-            anchorTag.href = canvas.toDataURL();
-            anchorTag.target = "_blank";
-            anchorTag.click();
-          });
-      }
-      else {
-        document.querySelector('#myhtml').removeAttribute('class')
-        document.querySelector('#myhtml').setAttribute('class', 'banner')
-        document.querySelector('.season-text h1').innerHTML = 'New'
-        document.querySelector("#Raepgh-photo").src =
-        "Raeph-img/channel-img.jpg";
+    document.querySelector("#Raepgh-photo").src =
+      "Raeph-img/channel-img-black.jpg";
+      setTimeout(function() {
+        document.querySelector("#myhtml").removeAttribute("class");
+        document.querySelector("#myhtml").setAttribute("class", "banner_black");
+        document.querySelector(".season-text h1").innerHTML = "Watch";
+        html2canvas(document.getElementById("myhtml")).then(function (canvas) {
+          var anchorTag = document.createElement("a");
+          document.body.appendChild(anchorTag);
+          anchorTag.download = `(Watch)${Episode_Name.value}${Rapper_Name.value}`;
+          anchorTag.href = canvas.toDataURL();
+          anchorTag.target = "_blank";
+          anchorTag.click();
+        });
+      }, 1000)
+    setTimeout(function() {
+        document.querySelector("#myhtml").removeAttribute("class");
+        document.querySelector("#myhtml").setAttribute("class", "banner");
+        document.querySelector(".season-text h1").innerHTML = "New";
+        document.querySelector("#Raepgh-photo").src = "Raeph-img/channel-img.jpg";
         html2canvas(document.getElementById("myhtml")).then(function (canvas) {
           var anchorTag = document.createElement("a");
           document.body.appendChild(anchorTag);
@@ -60,7 +58,6 @@ $(document).ready(function () {
           anchorTag.target = "_blank";
           anchorTag.click();
         });
-      }
-    }
+    }, 2000)
   });
 });
