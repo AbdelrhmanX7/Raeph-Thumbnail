@@ -45,11 +45,14 @@ $(document).ready(function () {
           anchorTag.click();
         });
       }, 1000)
+      setTimeout(function() {
+        document.querySelector("#Raepgh-photo").src = "Raeph-img/channel-img.jpg";
+
+      }, 1500)
     setTimeout(function() {
         document.querySelector("#myhtml").removeAttribute("class");
         document.querySelector("#myhtml").setAttribute("class", "banner");
         document.querySelector(".season-text h1").innerHTML = "New";
-        document.querySelector("#Raepgh-photo").src = "Raeph-img/channel-img.jpg";
         html2canvas(document.getElementById("myhtml")).then(function (canvas) {
           var anchorTag = document.createElement("a");
           document.body.appendChild(anchorTag);
@@ -58,6 +61,6 @@ $(document).ready(function () {
           anchorTag.target = "_blank";
           anchorTag.click();
         });
-    }, 2000)
+    }, 2500)
   });
 });
